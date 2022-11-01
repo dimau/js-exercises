@@ -2,9 +2,10 @@
   "name": "js-exercises",
   "description": "Just some JS and TS code for solving simple coding problems. You can modify index.ts and run script on the server by npm start",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start-ts": "ts-node index.ts",
+    "start-js": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
