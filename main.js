@@ -1,15 +1,17 @@
-const fs = require("fs");
-let input = fs.readFileSync("input.txt", "utf-8");
-[J, S] = input.split("\n");
+const cache = {};
 
-let set = new Set();
-for (let i = 0; i < J.length; i++) {
-  set.add(J[i]);
+function fibRecursive(n) {
+  // check in cache
+  if (n in cache) return cache[n];
+
+  // base cases
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+
+  // recursive case
+  const result = fibRecursive(n - 1) + fibRecursive(n - 2);
+  cache[n] = result;
+  return result;
 }
 
-let count = 0;
-for (let i = 0; i < S.length; i++) {
-  if (set.has(S[i])) count++;
-}
-
-console.log(count);
+console.log(fibRecursive(7));
